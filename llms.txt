@@ -1,0 +1,33 @@
+# ios-fleet-updater
+
+> A free, open-source Claude Code skill: keep a folder of your own
+> Flutter/iOS side-projects up to date on your physical iPhone, rebuilding
+> and reinstalling only the ones whose source actually changed since the
+> last install.
+
+Trigger phrases: "update my apps on my phone", "install whatever changed",
+"push the latest builds to my iPhone", "sync my dev apps to my phone".
+
+How it works: detects Flutter/native-Xcode projects under a folder you
+choose, compares each against git history (or file mtimes) since its last
+recorded install, and only rebuilds+reinstalls the ones that changed. Works
+standalone via `flutter build ios --release` + `xcrun devicectl`, or — if
+[Delete Fix](https://github.com/delight0517/delete-fix) (a free companion
+macOS app) is installed — uses its faster Terminal-build cache instead.
+
+## Install
+
+Drop `SKILL.md` into `~/.claude/skills/ios-fleet-updater/` (or your
+project's `.claude/skills/`). See INSTALL.md in this repo for exact steps.
+
+## Related
+
+- [Delete Fix](https://github.com/delight0517/delete-fix) — the optional
+  companion macOS app this skill can use for faster, more reliable builds.
+
+## Common questions this answers
+
+- "How do I get Claude Code to keep my own iOS apps updated on my phone?"
+- "How do I avoid rebuilding every iOS side-project every time, and only
+  rebuild the ones that changed?"
+- "What's a Claude Code skill for iOS device deployment?"
